@@ -1,0 +1,3110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Buildream - Construction Company</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --orange: #ffa726;
+            --dark: #343a40;
+            --dark2: #30353b;
+            --white: #ffffff;
+        }
+
+        body {
+            font-family: "Montserrat", Arial, sans-serif;
+            overflow-x: hidden;
+             background-color: #f8f8f8;
+        }
+
+        /* =========================
+           TOP BAR
+        ========================= */
+
+        .top-bar {
+            height: 45px;
+            background: #30353b;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 0 59px;
+
+            color: white;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .phone span,
+        .email span {
+            color: var(--orange);
+        }
+
+        .top-right {
+            display: flex;
+            align-items: center;
+            height: 100%;
+        }
+
+        .email {
+            margin-right: 30px;
+        }
+
+        .social {
+            display: flex;
+            height: 100%;
+        }
+
+        .social a {
+            width: 44px;
+            height: 100%;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            color: var(--orange);
+            text-decoration: none;
+
+            background: rgba(255,255,255,0.025);
+
+            border-left: 1px solid rgba(255,255,255,0.03);
+
+            font-size: 16px;
+
+            transition: 0.3s;
+        }
+
+        .social a:hover {
+            background: var(--orange);
+            color: #343a40;
+        }
+
+        .navbar {
+            height: 91px;
+            background: #343a40;
+
+            display: flex;
+            align-items: stretch;
+
+            position: relative;
+            z-index: 10;
+        }
+
+
+        .logo {
+            width: 200px;
+            height: 91px;
+
+            background: var(--orange);
+
+            display: flex;
+            align-items: center;
+
+            padding-left: 14px;
+
+            color: #30353b;
+
+            font-size: 21px;
+            font-weight: 800;
+
+            clip-path: polygon(
+                0 0,
+                83% 0,
+                100% 100%,
+                0 100%
+            );
+        }
+
+        /* NAV LINKS */
+
+        .nav-menu {
+            display: flex;
+            align-items: stretch;
+
+            margin-left: 105px;
+        }
+
+        .nav-menu a {
+            min-width: 105px;
+
+            height: 91px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            padding: 0 17px;
+
+            color: #dddddd;
+
+            text-decoration: none;
+
+            font-size: 13px;
+            font-weight: 500;
+
+            transition: all 0.3s ease;
+        }
+
+        .nav-menu a:hover {
+            color: var(--orange);
+        }
+
+        /* ACTIVE HOME */
+
+        .nav-menu  .active{
+            background: var(--orange);
+
+            color: #30353b;
+
+            width: 112px;
+
+            margin-left: -18px;
+
+            clip-path: polygon(
+                0 0,
+                72% 0,
+                100% 100%,
+                28% 100%
+            );
+        }
+
+        .nav-menu .active:hover {
+            color: #30353b;
+        }
+
+        .hero {
+            height: calc(100vh - 136px);
+            min-height: 620px;
+
+            position: relative;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            text-align: center;
+
+            overflow: hidden;
+
+            /*
+             * Construction background
+             */
+            background-image:
+                linear-gradient(
+                    rgba(28, 39, 48, 0.67),
+                    rgba(28, 39, 48, 0.67)
+                ),
+                url("image/bg_1.jpg");
+
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        /* DARK OVERLAY */
+
+        .hero::before {
+            content: "";
+
+            position: absolute;
+            inset: 0;
+
+            background: rgba(31, 42, 51, 0.404);
+
+            z-index: 1;
+        }
+
+        /* HERO CONTENT */
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+
+            width: 900px;
+
+            margin-top: -5px;
+        }
+
+
+        /* =========================
+           SINCE
+        ========================= */
+
+        .since {
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            gap: 20px;
+
+            margin-bottom: 22px;
+
+            color: white;
+
+            font-size: 15px;
+            font-weight: 800;
+
+            letter-spacing: 1px;
+        }
+
+        .since::before,
+        .since::after {
+            content: "";
+
+            width: 70px;
+            height: 2px;
+
+            background: white;
+        }
+
+
+        /* =========================
+           HEADING
+        ========================= */
+
+        .hero h1 {
+            color: white;
+
+            font-size: 58px;
+
+            line-height: 1.24;
+
+            font-weight: 900;
+
+            text-transform: uppercase;
+
+            letter-spacing: 0;
+
+            margin: 0;
+        }
+
+        .hero h1 .orange {
+            color: var(--orange);
+        }
+
+
+        /* =========================
+           BUTTONS
+        ========================= */
+
+        .buttons {
+            display: flex;
+
+            justify-content: center;
+
+            margin-top: 51px;
+        }
+
+        .buttons a {
+            height: 54px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            gap: 18px;
+
+            padding: 0 25px;
+
+            text-decoration: none;
+
+            font-size: 12px;
+
+            font-weight: 800;
+
+            letter-spacing: 0.7px;
+
+            transition: 0.3s;
+        }
+
+        .contact-btn {
+            min-width: 173px;
+
+            background: var(--orange);
+
+            color: #30353b;
+        }
+
+        .quote-btn {
+            min-width: 211px;
+
+            background: #343a40;
+
+            color: white;
+        }
+
+        .buttons a:hover {
+            transform: translateY(-2px);
+        }
+
+        .contact-btn:hover {
+            background: #ffb43b;
+        }
+
+        .quote-btn:hover {
+            background: #252a2f;
+        }
+
+        .arrow {
+            font-size: 20px;
+            font-weight: 400;
+        }
+        .about-section {
+    width: 100%;
+    min-height: 700px;
+    display: flex;
+    align-items: stretch;
+    background: #f8f8f8;
+} 
+        /* LEFT IMAGE */
+        .hero-image {
+            width: 48%;
+            min-height: 100vh;
+            position: relative;
+
+            background-image:
+                linear-gradient(
+                    rgba(255,255,255,0.08),
+                    rgba(255,255,255,0.08)
+                  ),
+                url("image/about.jpg");
+
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        /* EXPERIENCE BOX */
+        .experience {
+            position: absolute;
+            right: -1px;
+            bottom: 0;
+
+            width: 125px;
+            height: 315px;
+
+            background: #3d424a;
+            color: white;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .experience-content {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+
+            transform: rotate(-90deg);
+            white-space: nowrap;
+        }
+
+        .experience-number {
+            color: #ff991b;
+            font-size: 24px;
+            font-weight: 600;
+        }
+
+        .experience-text {
+            font-size: 18px;
+            font-weight: 400;
+        }
+
+        .experience-icon {
+            color: #ff991b;
+            font-size: 45px;
+        }
+
+        /* RIGHT CONTENT */
+        .content {
+            width: 52%;
+            padding: 45px 55px;
+        }
+
+        .content h1 {
+            font-size: 54px;
+            line-height: 1.35;
+            font-weight: 400;
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        .description {
+            max-width: 600px;
+            color: #777;
+            font-size: 16px;
+            line-height: 1.8;
+            margin-bottom: 28px;
+        }
+
+        .content h2 {
+            font-size: 25px;
+            font-weight: 400;
+            color: #222;
+            margin-bottom: 28px;
+        }
+
+        /* CARDS */
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 8px;
+        }
+
+        .card {
+            background: white;
+            min-height: 208px;
+
+            padding: 28px 25px;
+
+            display: flex;
+            gap: 20px;
+
+            transition: 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            background-color: #343a40;
+            color:white;
+        }
+        .card p:hover 
+        {
+            color:white;
+        }
+
+        .icon {
+            width: 55px;
+            min-width: 55px;
+            height: 55px;
+
+            border: 2px solid #ff991b;
+            border-radius: 10px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            color: #ff991b;
+            font-size: 25px;
+        }
+
+        .card h3 {
+            font-size: 20px;
+            font-weight: 400;
+            margin-bottom: 15px;
+        }
+
+        .card p {
+            color: #777;
+            font-size: 15px;
+            line-height: 1.9;
+        }
+         .trusted {
+            background: #f8f8f8;
+            text-align: center;
+            padding: 130px 30px 45px;
+        }
+
+        .subtitle {
+            color: #b87500;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .trusted h1 {
+            font-size: 50px;
+            font-weight: 400;
+            line-height: 1.5;
+            margin-bottom: 65px;
+        }
+
+        .companies {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 25px;
+        }
+
+        .company {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+            color: #5c5c5c;
+        }
+
+        .company i {
+            font-size: 45px;
+        }
+
+        .company p {
+            font-size: 14px;
+        }
+
+        /* BOTTOM CONSTRUCTION BANNER */
+
+        .banner {
+            min-height: 220px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 30px;
+            padding: 35px 45px;
+            overflow: hidden;
+            background:
+                linear-gradient(
+                    110deg,
+                    #ffa629 0%,
+                    #ffa629 43%,
+                    rgba(255,166,41,0) 43%
+                ),
+                url('image/bg_4.jpg')
+                center/cover no-repeat;
+        }
+
+        .banner-content {
+            max-width: 540px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .banner-content .small-text {
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            margin-bottom: 12px;
+        }
+
+        .banner h2 {
+            font-size: 36px;
+            font-weight: 400;
+            line-height: 1.55;
+        }
+
+        .appointment {
+            position: relative;
+            z-index: 1;
+            flex-shrink: 0;
+            background: #ffa629;
+            color: #333;
+            padding: 24px 40px;
+            text-decoration: none;
+            font-size: 12px;
+            font-weight: 700;
+            transition: 0.3s;
+        }
+
+        .appointment:hover {
+            background: #333;
+            color: white;
+        }
+        .section-title {
+    text-align: center;
+    margin-bottom: 80px;
+    padding-top: 80px;
+}
+
+.section-title p {
+    color: #c77700;
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    line-height: 1.5;
+}
+
+.section-title h2 {
+    color: #333333;
+    font-size: 52px;
+    font-weight: 400;
+    line-height: 1.2;
+    margin: 0;
+}
+   .service-container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 0 10px;
+
+    display: flex;
+    align-items: center;
+    /* grid-template-columns: 1fr 1fr; */
+    gap: 24px;
+    /* align-items: start; */
+}
+
+.service-image {
+    width: 100%;
+    height:900px;
+    object-fit: cover;
+    display: block;
+}
+
+.service-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.service-card {
+    width: 100%;
+    min-height: 270px;
+    padding: 34px 30px;
+
+    display: flex;
+    align-items: flex-start;
+    gap: 28px;
+
+    background: #3d424a;
+    color: white;
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+.service-card.orange-card {
+    background: #ffa629;
+    color: #333;
+}
+.service-icon {
+    width: 62px;
+    height: 62px;
+    flex-shrink: 0;
+}
+
+.service-content {
+    min-width: 0;
+}
+
+.service-content h3 {
+    font-size: 25px;
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+
+.service-content p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #eee;
+    margin-bottom: 24px;
+}
+.orange-card .service-content p {
+    color: #333;
+}
+.white-card .service-content p {
+    color: #333;
+}
+a 
+{
+    text-decoration: none;
+}
+.btn 
+ {
+    padding: 8px;
+    background-color:white;
+    color:brown;
+    /* border-radius: 10px; */
+    border: none;
+ }
+ .service-list .service-card:last-child {
+    background-color: #fff;
+    color: #333;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Hover effect */
+.service-list .service-card:last-child:hover {
+    background-color: #000;
+    color: #fff;
+}
+
+/* Heading and paragraph white on hover */
+.service-list .service-card:last-child:hover h3,
+.service-list .service-card:last-child:hover p {
+    color: #fff;
+}
+ .service-list .service-card:last-child h3,
+ .service-list .service-card:last-child p 
+ {
+    color: black;
+ }
+ .service-list .service-card  .btn:last-child
+ {
+    border: 1px solid #a86100;
+ }
+/* Main Section */
+        .story-section {
+            width: 100%;
+            min-height: 100vh;
+            padding: 80px 5%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .story-container {
+            max-width: 1250px;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            gap: 7%;
+        }
+
+        /* Left Image */
+        .story-image {
+            width: 50%;
+            position: relative;
+            overflow: hidden;
+            border-radius: 5px;
+        }
+
+        .story-image img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* Orange Play Button */
+        .play-button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80px;
+            height: 80px;
+            background-color: #ffa526;
+            border: none;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .play-button:hover {
+            background-color: #f39212;
+            transform: translate(-50%, -50%) scale(1.08);
+        }
+
+        .play-button span {
+            width: 0;
+            height: 0;
+            border-top: 11px solid transparent;
+            border-bottom: 11px solid transparent;
+            border-left: 19px solid #26384a;
+            margin-left: 5px;
+        }
+
+        /* Right Content */
+        .story-content {
+            width: 50%;
+        }
+
+        .subtitle {
+            color: #526d8c;
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+
+        .story-content h1 {
+            font-size: 32px;
+            font-weight: 500;
+            line-height: 1.45;
+            margin-bottom: 25px;
+        }
+
+        .description {
+            color: #60758c;
+            font-size: 16px;
+            line-height: 1.8;
+            margin-bottom: 25px;
+        }
+
+        /* Features List */
+        .features {
+            list-style: none;
+            margin-bottom: 35px;
+        }
+
+        .features li {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            color: #60758c;
+            font-size: 16px;
+            margin-bottom: 24px;
+        }
+
+        .check {
+            color: #ffa526;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        /* Learn More Button */
+        .learn-btn {
+            display: inline-block;
+            background-color: #ffa526;
+            color: #26384a;
+            text-decoration: none;
+            font-size: 12px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            padding: 20px 25px;
+            transition: 0.3s;
+        }
+
+        .learn-btn:hover {
+            background-color: #26384a;
+            color: #ffffff;
+        }
+        .stats-section {
+    width: 100%;
+    min-height: 295px;
+
+    background-image: url("image/image_3.jpg");
+    background-size: cover;
+    background-position: center;
+
+    position: relative;
+
+    display: flex;
+    align-items: center;
+}
+
+.overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(25, 30, 38, 0.72);
+}
+
+.stats-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+
+    position: relative;
+    z-index: 1;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+}
+
+.stat-box {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+.icon {
+    color: #ffa51f;
+    font-size: 48px;
+    line-height: 1;
+    margin-top: 3px;
+    border: none;
+}
+.icon  img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    border: none;
+}
+.stat-content h2 {
+    color: #ffa51f;
+    font-size: 42px;
+    font-weight: bold;
+    line-height: 1.1;
+    margin-bottom: 8px;
+}
+
+.stat-content p {
+    color: #ffffff;
+    font-size: 14px;
+    line-height: 1.9;
+}
+  .team-section {
+            padding: 65px 5%;
+            text-align: center;
+        }
+
+        .section-title {
+            color: #bd6b00;
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .main-heading {
+            font-size: 52px;
+            font-weight: 400;
+            color: #333;
+            margin-bottom: 75px;
+        }
+.team-container 
+{
+    max-width: 1200px;
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 24px;
+    margin: 0 auto;
+}
+.team-card
+{
+    flex: 1;
+    min-width: 0;
+    background-color: #fff;
+    overflow: hidden;
+    position: relative;
+}
+.team-card img 
+{
+    width: 100%;
+    height:420px;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
+    transition: transform 0.4s ease;
+}
+.team-card:hover  img {
+    transform: scale(1.05);
+}
+.team-info {
+    padding: 18px 8px 20px;
+}
+
+.team-info h3 {
+    font-size: 21px;
+    line-height: 1.4;
+    font-weight: 400;
+    color: #193653;
+    margin-bottom: 12px;
+}
+
+.team-info p {
+    font-size: 12px;
+    color: #666;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+.social-links 
+{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    left: 12px;
+    top: 35%;
+    gap: 7px;
+    opacity: 0;
+    transform: translateX(-15);
+    transition: transform 0.3s ease;
+}
+ .team-card:hover .social-links 
+{
+    opacity: 1;
+    transform: translateX(0);
+}
+      .social-links a {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 42px;
+            height: 42px;
+            background-color: #35475b;
+            color: white;
+            text-decoration: none;
+            border-radius: 50%;
+            font-size: 15px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+             .social-links a:hover {
+            background-color: #e58b17;
+        }
+        .team-card .team-info {
+    background-color: #fff;
+    transition: background-color 0.3s ease;
+}
+.team-card:hover .team-info{
+    background-color: #ffa526;
+}
+.team-card:hover .team-info h3
+{
+    color:black;
+}
+.team-card:hover .team-info p {
+    color: #fff;
+}
+.portfolio {
+    width: 100%;
+    padding-top: 200px;
+}
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.section-heading p {
+    color: #c47a00;
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.section-heading h1 {
+    font-size: 54px;
+    font-weight: 400;
+}
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+}
+
+.project-card {
+  position: relative;
+  overflow: hidden;
+  height: 340px;
+  cursor: pointer;
+}
+
+.project-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+.project-card:hover img {
+  transform: scale(1.06);
+}
+
+.project-overlay {
+  position: absolute;
+  inset: 0;
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  color: white;
+  background: linear-gradient(
+    transparent,
+    rgba(0, 0, 0, 0.8)
+  );
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.project-overlay span,
+.project-overlay h2,
+.project-overlay p {
+  transform: translateY(20px);
+  transition: transform 0.4s ease;
+}
+
+.project-overlay span {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.project-overlay h2 {
+  font-size: 28px;
+  margin: 8px 0;
+}
+
+.project-overlay p {
+  margin-bottom: 0;
+}
+
+.project-card:hover .project-overlay {
+  opacity: 1;
+}
+
+.project-card:hover .project-overlay span,
+.project-card:hover .project-overlay h2,
+.project-card:hover .project-overlay p {
+  transform: translateY(0);
+}
+.search-btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 48px;
+    height: 48px;
+    background: #ff9f1c;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    z-index: 5;
+
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+}
+
+.project-card:hover .search-btn {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.search-btn:hover {
+    background: #222;
+    color: #fff;
+}
+.pricing-section {
+    width: 100%;
+    padding: 50px 25px;
+}
+
+/* Heading */
+.heading {
+    text-align: center;
+    margin-bottom: 68px;
+}
+
+.heading p {
+    color: #b66a00;
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 18px;
+}
+
+.heading h1 {
+    font-size: clamp(32px, 5vw, 54px);
+    font-weight: 400;
+}
+
+/* Four cards in one row */
+.pricing-container {
+    display:flex;
+    gap: 24px;
+    max-width: 1400px;
+    margin: auto;
+    align-items: stretch;
+}
+.pricing-card {
+    flex: 1;
+    min-width: 0;
+}
+
+/* Individual card */
+.pricing-card {
+    position: relative;
+    background: #fff;
+    text-align: center;
+    padding-top: 44px;
+    border: 2px solid transparent;
+    min-width: 0;
+}
+
+/* Package title */
+.pricing-card h3 {
+    font-size: 14px;
+    letter-spacing: 1px;
+    margin-bottom: 22px;
+}
+
+/* Price */
+.price {
+    color: #ad6500;
+    font-size: clamp(34px, 3.5vw, 52px);
+    font-weight: bold;
+    margin-bottom: 22px;
+}
+
+.price span {
+    color: #777;
+    font-size: 23px;
+    font-weight: normal;
+    vertical-align: top;
+}
+
+/* Package description */
+.description {
+    color: #777;
+    font-size: 14px;
+    margin-bottom: 28px;
+}
+
+/* Features list */
+.pricing-card ul {
+    list-style: none;
+    text-align: left;
+}
+
+.pricing-card li {
+    position: relative;
+    padding: 14px 10px 14px 46px;
+    border-bottom: 1px solid #eeeeee;
+    color: #666;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+/* Orange check marks */
+.pricing-card li::before {
+    content: "✓";
+    position: absolute;
+    left: 19px;
+    top: 13px;
+    color: #ff9f24;
+    font-size: 19px;
+    font-weight: bold;
+}
+
+/* Unavailable features */
+.pricing-card li.disabled {
+    color: #aaa;
+    text-decoration: line-through;
+}
+
+.pricing-card li.disabled::before {
+    content: "×";
+    color: #aaa;
+    font-size: 19px;
+    font-weight: bold;
+}
+
+/* Buttons */
+.butn {
+    display: inline-block;
+    background: #ffa329;
+    color: #17304a;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    padding: 19px 34px;
+    margin: 28px 0 10px;
+    transition: 0.3s;
+}
+
+.butn:hover {
+    background: #e88b0c;
+    color: #fff;
+}
+
+/* Highlighted premium card */
+.pricing-card.popular {
+    border: 2px solid #ffa329;
+}
+
+/* Most popular label */
+.popular-badge {
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #ffa329;
+    color: #17304a;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    text-align: left;
+    line-height: 22px;
+    padding: 7px 16px;
+    border-radius: 25px;
+    width: 50%;
+}
+
+        /* 2. Main section */
+        .testimonial-section {
+            width: 100%;
+            padding: 100px 5%;
+        }
+
+        /* 3. Heading */
+        .section-heading {
+            text-align: center;
+            margin-bottom: 75px;
+        }
+
+        .section-heading span {
+            color: #c77800;
+            font-size: 17px;
+            font-weight: bold;
+        }
+
+        .section-heading h1 {
+            font-size: 54px;
+            font-weight: 400;
+            margin-top: 20px;
+        }
+
+        /* 4. Cards container */
+        .testimonial-container {
+            display: flex;
+            gap: 26px;
+            align-items: stretch;
+        }
+
+        /* 5. Individual card */
+        .testimonial-card {
+            flex: 1;
+            min-width: 0;
+            background-color: white;
+            padding: 35px 30px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.03);
+        }
+
+        /* 6. Orange card */
+        .testimonial-card.active {
+            background-color: #ffa526;
+        }
+
+        /* 7. Client information */
+        .client-info {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 25px;
+        }
+
+        .client-image {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            flex-shrink: 0;
+        }
+
+        .client-details h3 {
+            font-size: 20px;
+            color: #414650;
+            margin-bottom: 12px;
+        }
+
+        .client-details p {
+            color: #bd7100;
+            font-size: 12px;
+        }
+
+        /* 8. Quote icon */
+        .quote {
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #f39819;
+            color: white;
+            border-radius: 50%;
+            font-size: 24px;
+            font-weight: bold;
+            margin-left: -28px;
+            margin-top: 50px;
+        }
+
+        .testimonial-card.active .quote {
+            background-color: white;
+            color: #f39819;
+        }
+
+        /* 9. Testimonial paragraph */
+        .testimonial-text {
+            color: #777;
+            font-size: 16px;
+            line-height: 1.8;
+        }
+
+        .testimonial-card.active .testimonial-text {
+            color: #333;
+        }
+        .blog-section {
+            padding: 40px 25px;
+        }
+
+        .section-heading {
+            text-align: center;
+            margin-bottom: 65px;
+        }
+
+        .section-heading p {
+            color: #c47a00;
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .section-heading h1 {
+            font-size: 52px;
+            font-weight: 400;
+        }
+
+        /* Flexbox container */
+        .blog-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: stretch;
+            gap: 24px;
+        }
+
+        /* Individual blog card */
+        .blog-card {
+            background-color: white;
+            flex: 1;
+            min-width: 0;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .blog-image {
+            position: relative;
+            height: 300px;
+        }
+
+        .blog-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* Date box */
+        .date-box {
+            position: absolute;
+            left: 24px;
+            bottom: 0;
+            background-color: #383e47;
+            color: white;
+            width: 70px;
+            height: 93px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .date-box .day {
+            font-size: 29px;
+        }
+
+        .date-box .month {
+            font-size: 14px;
+            margin-top: 3px;
+        }
+
+        .blog-content {
+            padding: 32px 30px 42px;
+        }
+
+        .blog-meta {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 14px;
+            color: #a86100;
+            font-size: 13px;
+            font-weight: bold;
+            margin-bottom: 22px;
+        }
+
+        .blog-meta span  i{
+            color: #ff9e24;
+            margin-right: 5px;
+            font-size: 15px;
+        }
+        .blog-content h2 {
+            font-size: 24px;
+            font-weight: 400;
+            line-height: 1.5;
+            margin-bottom: 18px;
+        }
+
+        .blog-content p {
+            color: #777;
+            font-size: 16px;
+            line-height: 1.8;
+        }
+      .blog-content:hover h2
+        {
+            color:orange;
+            transition: color 0.3s ease-in;
+        }
+        /* 2. Main Layout */
+    .contact-section {
+      display: flex;
+      min-height: 100vh;
+      width: 100%;
+    }
+
+    /* 3. Left Side: Form */
+    .contact-form {
+      width: 48%;
+      padding: 45px 25px;
+      background: #ffffff;
+    }
+
+    .small-heading {
+      color: #d97706;
+      font-size: 13px;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .contact-form h2 {
+      font-size: 27px;
+      margin-bottom: 35px;
+      color: #111111;
+    }
+
+    /* 4. Name and Email in One Row */
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-bottom: 25px;
+    }
+
+    .form-group {
+      margin-bottom: 25px;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 12px;
+      font-weight: bold;
+      letter-spacing: 1px;
+      margin-bottom: 14px;
+      text-transform: uppercase;
+    }
+
+    /* 5. Common Input Styling */
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 15px;
+      border: 1px solid #dedede;
+      border-radius: 0;
+      outline: none;
+      font: inherit;
+      font-size: 14px;
+      color: #333333;
+      background: #ffffff;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: #ff9f24;
+    }
+
+    .form-group textarea {
+      min-height: 190px;
+      resize: vertical;
+    }
+
+    /* 6. Submit Button */
+    .submit-btn {
+      background: #ff9f24;
+      color: #222222;
+      border: none;
+      padding: 19px 25px;
+      font-size: 12px;
+      font-weight: bold;
+      letter-spacing: 1px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .submit-btn:hover {
+      background: #e88b10;
+      color: #ffffff;
+    }
+
+    /* 7. Right Side: FAQ */
+    .faq-section {
+      width: 52%;
+      padding: 45px 30px;
+      background:
+        linear-gradient(
+          rgba(255, 255, 255, 0.88),
+          rgba(255, 255, 255, 0.94)
+        ),
+        url("https://images.unsplash.com/photo-1503387762-592deb58ef4e")
+        center / cover no-repeat;
+    }
+
+    .faq-section .small-heading {
+      font-size: 15px;
+      font-weight: bold;
+      text-transform: none;
+      margin-bottom: 20px;
+    }
+
+    .faq-section h1 {
+      font-size: clamp(32px, 4vw, 52px);
+      font-weight: 400;
+      line-height: 1.4;
+      margin-bottom: 20px;
+    }
+
+    .faq-intro {
+      color: #686868;
+      line-height: 1.8;
+      font-size: 15px;
+      margin-bottom: 25px;
+    }
+
+    /* 8. Accordion Using HTML Details */
+    .faq-item {
+      background: #ffffff;
+      border: 1px solid #dedede;
+      border-bottom: none;
+    }
+
+    .faq-item:last-child {
+      border-bottom: 1px solid #dedede;
+    }
+
+    .faq-item summary {
+      padding: 20px;
+      font-weight: bold;
+      font-size: 16px;
+      cursor: pointer;
+      list-style: none;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 15px;
+    }
+
+    /* Default browser arrow hide */
+    .faq-item summary::-webkit-details-marker {
+      display: none;
+    }
+
+    /* Custom arrow */
+    .faq-item summary::after {
+      content: "+";
+      font-size: 24px;
+      color: #555555;
+    }
+
+    .faq-item[open] summary::after {
+      content: "−";
+    }
+
+    .faq-item[open] summary {
+      background: #ff9f24;
+      color: #222222;
+    }
+
+    .faq-item[open] summary::after {
+      color: #222222;
+    }
+
+    .faq-answer {
+      padding: 22px 25px;
+      color: #555555;
+      font-size: 15px;
+      line-height: 1.8;
+    }
+    /* Overall footer */
+.footer {
+  width: 100%;
+}
+
+/* Newsletter section */
+.newsletter {
+  background-color: #ffa329;
+  color: #20252b;
+  padding: 60px 24px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+}
+
+.newsletter-text {
+  flex: 1;
+}
+
+.newsletter-text h2 {
+  font-size: 28px;
+  margin-bottom: 16px;
+}
+
+.newsletter-text p {
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+.newsletter-form {
+  display: flex;
+  gap: 8px;
+  flex: 0 0 42%;
+}
+
+.newsletter-form input {
+  min-width: 0;
+  flex: 1;
+  padding: 18px;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.newsletter-form button {
+  background-color: #20252b;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 18px 24px;
+  text-transform: uppercase;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* Main footer */
+.footer-main {
+  background-color: #343a40;
+  padding: 100px 24px 50px;
+
+  display: grid;
+  grid-template-columns: 1.2fr 1.2fr 0.65fr 1.2fr;
+  gap: 35px;
+}
+
+.footer-column h3 {
+  font-size: 20px;
+  margin-bottom: 42px;
+  color: #fff;
+}
+
+.footer-column p {
+  color: #d2d5d9;
+  font-size: 16px;
+  line-height: 1.8;
+  margin-bottom: 18px;
+}
+/* Social links */
+.social-items {
+  display: flex;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.social-items a {
+  width: 42px;
+  height: 42px;
+  background-color: #3d4349;
+  color: #ffa329;
+  text-decoration: none;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* Recent posts */
+.post {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  margin-bottom: 22px;
+}
+
+.post img {
+  width: 76px;
+  height: 80px;
+  object-fit: cover;
+}
+
+.post a {
+  color: white;
+  text-decoration: none;
+  line-height: 1.5;
+  display: block;
+}
+
+.post small {
+  color: #ffa329;
+  display: block;
+  margin-top: 8px;
+}
+
+/* Quick links */
+.quick-links ul {
+  list-style: none;
+}
+
+.quick-links li {
+  margin-bottom: 16px;
+}
+
+.quick-links a {
+  color: #e4e6e8;
+  text-decoration: none;
+  font-size: 16px;
+}
+.quick-links a:hover
+{
+    color: #ffa629;
+    transition: 0.3s;
+}
+/* Contact column */
+.contact p {
+  margin-bottom: 16px;
+  overflow-wrap: anywhere;
+}
+.const:hover a
+{
+    color: #ff9f24;
+    transition: 0.3s;
+}
+.last-section {
+    width: 100%;
+    min-height: 120px;
+    background-color: #30353b;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.last-section p {
+    color: #c7d0dc;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    text-align: center;
+    line-height: 1.8;
+}
+
+.heart {
+    color: #ffffff;
+    font-size: 16px;
+    margin: 0 3px;
+}
+
+.last-section a {
+    color: #ff8c00;
+    text-decoration: underline;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.last-section a:hover {
+    color: #ffffff;
+}
+    </style>
+</head>
+<body>
+
+    <!-- =========================
+         TOP CONTACT BAR
+    ========================== -->
+
+    <div class="top-bar">
+
+        <div class="phone">
+            <span>Free Call:</span>
+            +1 415 555 0142
+        </div>
+
+        <div class="top-right">
+
+            <div class="email">
+                <span>Email Address:</span>
+                info@example.com
+            </div>
+
+            <div class="social">
+
+                <a href="#">
+                    <i class="fa-brands fa-twitter"></i>
+                </a>
+
+                <a href="#">
+                    <i class="fa-brands fa-facebook-f"></i>
+                </a>
+
+                <a href="#">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         NAVBAR
+    ========================== -->
+
+    <nav class="navbar">
+
+        <div class="logo">
+            BUILDREAM
+        </div>
+
+        <div class="nav-menu">
+
+            <a href="#" class="active">
+                HOME
+            </a>
+
+            <a href="#">
+                ABOUT
+            </a>
+
+            <a href="#">
+                SERVICES
+            </a>
+
+            <a href="#">
+                PROJECTS
+            </a>
+
+            <a href="#">
+                PRICING
+            </a>
+
+            <a href="#">
+                BLOG
+            </a>
+
+            <a href="#">
+                CONTACT
+            </a>
+
+        </div>
+
+    </nav>
+
+
+    <!-- =========================
+         HERO SECTION
+    ========================== -->
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <div class="since">
+                SINCE 1982
+            </div>
+
+
+            <h1>
+
+                WE WILL BE
+                <span class="orange">
+                    HAPPY
+                </span>
+                TO
+
+                <br>
+
+                TAKE CARE OF YOUR
+
+                <br>
+
+                WORK
+
+            </h1>
+
+
+            <div class="buttons">
+
+                <a href="#" class="contact-btn">
+
+                    CONTACT US
+
+                    <span class="arrow">
+                        →
+                    </span>
+
+                </a>
+
+
+                <a href="#" class="quote-btn">
+
+                    REQUEST A QUOTE
+
+                    <span class="arrow">
+                        →
+                    </span>
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+     <section class="about-section">
+
+        <!-- LEFT SIDE -->
+        <div class="hero-image">
+
+            <div class="experience">
+                <div class="experience-content">
+
+                    <span class="experience-icon">↙</span>
+
+                    <span class="experience-number">
+                        38
+                    </span>
+
+                    <span class="experience-text">
+                        Years of experience
+                    </span>
+
+                </div>
+            </div>
+
+        </div>
+
+
+        <!-- RIGHT SIDE -->
+        <div class="content">
+
+            <h1>
+                <!-- Welcome to buildream -->
+                Quality and
+                Affordable<br>
+                Constructor
+            </h1>
+
+            <p class="description">
+                Far far away, behind the word mountains, far from the
+                countries Vokalia and Consonantia, there live the blind
+                texts. Separated they live in Bookmarksgrove right at the
+                coast of the Semantics, a large language ocean.
+            </p>
+
+            <h2>
+                We Can Help You
+            </h2>
+
+
+            <div class="cards">
+
+                <!-- CARD 1 -->
+                <div class="card">
+
+                    <div class="icon">
+                        🏢
+                    </div>
+
+                    <div>
+                        <h3>Construction</h3>
+
+                        <p>
+                            Far far away,<br>
+                            behind the word<br>
+                            mountains.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <!-- CARD 2 -->
+                <div class="card">
+
+                    <div class="icon">
+                        ▦
+                    </div>
+
+                    <div>
+                        <h3>Architecture</h3>
+
+                        <p>
+                            Far far away,<br>
+                            behind the word<br>
+                            mountains.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <!-- CARD 3 -->
+                <div class="card">
+
+                    <div class="icon">
+                        ♧
+                    </div>
+
+                    <div>
+                        <h3>Consulting</h3>
+
+                        <p>
+                            Far far away,<br>
+                            behind the word<br>
+                            mountains.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <!-- CARD 4 -->
+                <div class="card">
+
+                    <div class="icon">
+                        ⚒
+                    </div>
+
+                    <div>
+                        <h3>Mechanical</h3>
+
+                        <p>
+                            Far far away,<br>
+                            behind the word<br>
+                            mountains.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="trusted">
+
+        <p class="subtitle">Trusted By</p>
+
+        <h1>
+            Companies We've<br>
+            Worked With
+        </h1>
+
+        <div class="companies">
+
+            <div class="company">
+                <i class="fa-solid fa-building"></i>
+                <p>ABC Corp</p>
+            </div>
+
+            <div class="company">
+                <i class="fa-solid fa-city"></i>
+                <p>City Dev</p>
+            </div>
+
+            <div class="company">
+                <i class="fa-solid fa-landmark"></i>
+                <p>State Bank</p>
+            </div>
+
+            <div class="company">
+                <i class="fa-solid fa-hospital"></i>
+                <p>Metro Health</p>
+            </div>
+
+            <div class="company">
+                <i class="fa-solid fa-hotel"></i>
+                <p>Grand Hotels</p>
+            </div>
+
+            <div class="company">
+                <i class="fa-solid fa-industry"></i>
+                <p>Industrial Co</p>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="banner">
+
+        <div class="banner-content">
+
+            <p class="small-text">
+                YOU MAY CONTACT US FOR CONSTRUCTION &amp; RENOVATION WORK
+            </p>
+
+            <h2>
+                We Are Great Construction Company
+            </h2>
+
+        </div>
+
+        <a href="#appointment" class="appointment">
+            MAKE AN APPOINTMENT
+        </a>
+
+    </section>
+<section class="services">
+
+    <div class="section-title">
+        <p>What We Do</p>
+        <h2>Services</h2>
+    </div>
+<div class="service-container">
+
+    <!-- LEFT IMAGE -->
+    <div class="image-box">
+        <img
+            class="service-image"
+            src="image/services.jpg"
+            alt="Construction worker"
+        >
+    </div>
+
+    <!-- RIGHT SIDE: THREE CARDS -->
+    <div class="service-list">
+
+        <!-- CARD 1 -->
+        <div class="service-card">
+          <img src="svg/machanical.svg" alt="" class="icon">
+
+            <div class="service-content">
+                <h3>Construction Services</h3>
+                <p>
+                    Far far away, behind the word mountains,
+                    far from the countries Vokalia and
+                    Consonantia, there live the blind.
+                </p>
+                <a href="#" class="btn">LEARN MORE</a>
+            </div>
+        </div>
+
+        <!-- CARD 2 -->
+        <div class="service-card orange-card">
+          <img src="svg/home.svg" alt="" class="icon">
+
+            <div class="service-content">
+                <h3>Infrastructure Services</h3>
+                <p>
+                     Far far away, behind the word mountains,
+                    far from the countries Vokalia and
+                    Consonantia, there live the blind.
+                </p>
+                <a href="#" class="btn">LEARN MORE</a>
+            </div>
+        </div>
+
+        <!-- CARD 3 -->
+        <div class="service-card">
+          <div class="service-icon">
+            <img src="svg/tree.svg" alt="" class="icon">
+          </div>
+
+            <div class="service-content">
+                <h3>Architecture Services</h3>
+                <p>
+                    Far far away, behind the word mountains,
+                    far from the countries Vokalia and
+                    Consonantia, there live the blind.
+                </p>
+                <a href="#" class="btn">LEARN MORE</a>
+            </div>
+        </div>
+
+    </div>
+</div>
+<section class="story-section">
+        <div class="story-container">
+
+            <!-- Left Side: Image and Play Button -->
+            <div class="story-image">
+            <img src="image/bg_3.jpg" alt="">
+
+                <button class="play-button"
+                        aria-label="Watch our story"
+                        onclick="alert('Yahan aap apni company ki video add kar sakte hain!')">
+                    <span></span>
+                </button>
+            </div>
+
+            <!-- Right Side: Text Content -->
+            <div class="story-content">
+
+                <p class="subtitle">Watch Our Story</p>
+
+                <h1>Building Dreams Into Reality Since 1982</h1>
+
+                <p class="description">
+                    See how we transform visions into structures that
+                    stand the test of time. Our team of experts brings
+                    together innovation, quality, and dedication in every
+                    project we undertake.
+                </p>
+
+                <ul class="features">
+                    <li>
+                        <span class="check">✓</span>
+                        Award-winning construction projects
+                    </li>
+
+                    <li>
+                        <span class="check">✓</span>
+                        Sustainable building practices
+                    </li>
+
+                    <li>
+                        <span class="check">✓</span>
+                        On-time, on-budget delivery
+                    </li>
+
+                    <li>
+                        <span class="check">✓</span>
+                        Safety-first approach
+                    </li>
+                </ul>
+
+                <a href="#about" class="learn-btn">
+                    LEARN MORE ABOUT US
+                </a>
+
+            </div>
+
+        </div>
+    </section>
+     <section class="stats-section">
+        <div class="overlay"></div>
+
+        <div class="stats-container">
+
+            <div class="stat-box">
+                <div class="icon">
+                 <img src="svg/tree.svg" alt="" width="50%">
+                </div>
+                <div class="stat-content">
+                    <h2>3,000</h2>
+                    <p>COMPLETED<br>PROJECTS</p>
+                </div>
+            </div>
+
+            <div class="stat-box">
+                <div class="icon">
+                <img src="svg/tree.svg" alt="" width="50%">
+                </div>
+                <div class="stat-content">
+                    <h2>320</h2>
+                    <p>HAPPY CLIENTS</p>
+                </div>
+            </div>
+
+            <div class="stat-box">
+                <div class="icon">
+              <img src="svg/tree.svg" alt="" width="50%">
+                </div>
+                <div class="stat-content">
+                    <h2>1,000</h2>
+                    <p>CUP OF COFFEE</p>
+                </div>
+            </div>
+
+            <div class="stat-box">
+                <div class="icon">
+                <img src="svg/tree.svg" alt="" width="50%">
+                </div>
+                <div class="stat-content">
+                    <h2>587</h2>
+                    <p>ENGINEERS &<br>STAFFS</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+     
+    <section class="team-section">
+
+        <p class="section-title">Team &amp; Staff</p>
+
+        <h1 class="main-heading">Qualified Engineers</h1>
+    <div class="team-container">
+
+    <div class="team-card">
+        <img src="image/staff-1.jpg" alt="">
+                  <div class="social-links">
+                    <a href="#" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                </div>
+                    <div class="team-info">
+            <h3>Lionel Murtchbach</h3>
+            <p>Senior ENGINEER</p>
+        </div>
+    </div>
+    <div class="team-card">
+        <img src="image/staff-2.jpg" alt="">
+                    <div class="team-info">
+            <h3>Miko Nintido</h3>
+            <p>SENIOR ENGINEER</p>
+        </div>
+        <div class="social-links">
+                    <a href="#" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+     </div>
+    </div>
+    <div class="team-card">
+        <img src="image/staff-3.jpg" alt="">
+            <div class="team-info">
+            <h3>Bea Alam</h3>
+            <p>SENIOR ENGINEER</p>
+        </div>
+                      <div class="social-links">
+                    <a href="#" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                </div>
+    </div>
+    <div class="team-card">
+        <img src="image/staff-4.jpg" alt="">
+                    <div class="team-info">
+            <h3>John Bufffer</h3>
+            <p>SENIOR ENGINEER</p>
+        </div>
+        <div class="social-links">
+                    <a href="#" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+         </div>
+    </div>
+    </div>
+    </section>
+    <section class="portfolio">
+
+        <div class="section-heading">
+            <p>Portfolio</p>
+            <h1>Projects</h1>
+        </div>
+     
+<div class="gallery">
+
+  <div class="project-card">
+    <img src="image/work-1.jpg" alt="Worker">
+    <div class="project-overlay">
+      <span>WORKER</span>
+      <h2>Expert Craftsmanship</h2>
+      <p>Quality work, built to last.</p>
+    </div>
+            <a href="image/work-1.jpg" class="search-btn">
+        <i class="fa-solid fa-magnifying-glass"></i>
+    </a>
+  </div>
+
+  <div class="project-card">
+    <img src="image/work-2.jpg" alt="Loader">
+    <div class="project-overlay">
+      <span>EQUIPMENT</span>
+      <h2>Heavy Equipment</h2>
+      <p>Powering every construction project.</p>
+    </div>
+            <a href="image/work-1.jpg" class="search-btn">
+        <i class="fa-solid fa-magnifying-glass"></i>
+    </a>
+  </div>
+
+  <div class="project-card">
+    <img src="image/work-3.jpg" alt="Bridge">
+    <div class="project-overlay">
+      <span>INFRASTRUCTURE</span>
+      <h2>Bridge Construction</h2>
+      <p>Building connections for the future.</p>
+    </div>
+            <a href="image/work-1.jpg" class="search-btn">
+        <i class="fa-solid fa-magnifying-glass"></i>
+    </a>
+  </div>
+
+  <div class="project-card">
+    <img src="image/work-4.jpg" alt="Factory">
+    <div class="project-overlay">
+      <span>INDUSTRIAL</span>
+      <h2>Industrial Projects</h2>
+      <p>Strong foundations for industry.</p>
+    </div>
+            <a href="image/work-1.jpg" class="search-btn">
+        <i class="fa-solid fa-magnifying-glass"></i>
+    </a>
+  </div>
+
+  <div class="project-card">
+    <img src="image/work-5.jpg" alt="Excavator">
+    <div class="project-overlay">
+      <span>EXCAVATION</span>
+      <h2>Ground Works</h2>
+      <p>Precision at every stage.</p>
+    </div>
+            <a href="image/work-1.jpg" class="search-btn">
+        <i class="fa-solid fa-magnifying-glass"></i>
+    </a>
+  </div>
+
+  <div class="project-card">
+    <img src="image/work-6.jpg" alt="Carpenter">
+    <div class="project-overlay">
+      <span>BUILDING</span>
+      <h2>High Tower Works</h2>
+      <p>Quality construction, built to last.</p>
+    </div>
+         <a href="image/work-1.jpg" class="search-btn">
+        <i class="fa-solid fa-magnifying-glass"></i>
+    </a>
+  </div>
+</div>
+    </section>
+    <section class="pricing-section">
+
+        <div class="heading">
+            <p>Our Pricing</p>
+            <h1>Pricing & Packages</h1>
+        </div>
+
+        <div class="pricing-container">
+
+            <!-- Basic Package -->
+            <div class="pricing-card">
+                <h3>BASIC</h3>
+
+                <div class="price">
+                    <span>$</span>49K
+                </div>
+
+                <p class="description">Small renovations</p>
+
+                <ul>
+                    <li>Up to 500 sq ft</li>
+                    <li>Basic materials</li>
+                    <li>2-week timeline</li>
+                    <li>1-year warranty</li>
+                    <li class="disabled">Design consultation</li>
+                    <li class="disabled">Project manager</li>
+                </ul>
+
+                <a href="#" class="butn">GET QUOTE</a>
+            </div>
+
+            <!-- Standard Package -->
+            <div class="pricing-card">
+                <h3>STANDARD</h3>
+
+                <div class="price">
+                    <span>$</span>79K
+                </div>
+
+                <p class="description">Home additions</p>
+
+                <ul>
+                    <li>Up to 1,000 sq ft</li>
+                    <li>Quality materials</li>
+                    <li>4-week timeline</li>
+                    <li>2-year warranty</li>
+                    <li>Design consultation</li>
+                    <li class="disabled">Project manager</li>
+                </ul>
+
+                <a href="#" class="butn">GET QUOTE</a>
+            </div>
+
+            <!-- Premium Package -->
+            <div class="pricing-card popular">
+                <div class="popular-badge">MOST<br>POPULAR</div>
+
+                <h3>PREMIUM</h3>
+
+                <div class="price">
+                    <span>$</span>109K
+                </div>
+
+                <p class="description">Full home builds</p>
+
+                <ul>
+                    <li>Up to 2,500 sq ft</li>
+                    <li>Premium materials</li>
+                    <li>8-week timeline</li>
+                    <li>5-year warranty</li>
+                    <li>Design consultation</li>
+                    <li>Dedicated project manager</li>
+                </ul>
+
+                <a href="#" class="butn">GET QUOTE</a>
+            </div>
+
+            <!-- Enterprise Package -->
+            <div class="pricing-card">
+                <h3>ENTERPRISE</h3>
+
+                <div class="price">
+                    <span>$</span>149K+
+                </div>
+
+                <p class="description">Commercial projects</p>
+
+                <ul>
+                    <li>Unlimited sq ft</li>
+                    <li>Custom materials</li>
+                    <li>Custom timeline</li>
+                    <li>10-year warranty</li>
+                    <li>Full design team</li>
+                    <li>24/7 support</li>
+                </ul>
+
+                <a href="#" class="butn">CONTACT US</a>
+            </div>
+
+        </div>
+    </section>
+    <section class="testimonial-section">
+
+        <div class="section-heading">
+            <span>Testimonial</span>
+            <h1>Happy Clients</h1>
+        </div>
+
+        <div class="testimonial-container">
+
+            <!-- First card -->
+            <div class="testimonial-card">
+
+                <div class="client-info">
+                    <img
+                        src="image/person_3.jpg"
+                        alt="Roger Scott"
+                        class="client-image"
+                    >
+
+                    <div class="client-details">
+                        <h3>ROGER SCOTT</h3>
+                        <p>MARKETING MANAGER</p>
+                    </div>
+
+                    <div class="quote">&ldquo;</div>
+                </div>
+
+                <p class="testimonial-text">
+                    Far far away, behind the word mountains,
+                    far from the countries Vokalia and
+                    Consonantia, there live the blind texts.
+                </p>
+
+            </div>
+
+            <!-- Second card -->
+            <div class="testimonial-card">
+
+                <div class="client-info">
+                    <img
+                        src="image/person_2.jpg"
+                        alt="Client portrait"
+                        class="client-image"
+                    >
+
+                    <div class="client-details">
+                        <h3>ROGER SCOTT</h3>
+                        <p>MARKETING MANAGER</p>
+                    </div>
+
+                    <div class="quote">&ldquo;</div>
+                </div>
+
+                <p class="testimonial-text">
+                    Far far away, behind the word mountains,
+                    far from the countries Vokalia and
+                    Consonantia, there live the blind texts.
+                </p>
+
+            </div>
+
+            <!-- Third orange card -->
+            <div class="testimonial-card active">
+
+                <div class="client-info">
+                    <img
+                        src="image/person_1.jpg"
+                        alt="Client portrait"
+                        class="client-image"
+                    >
+
+                    <div class="client-details">
+                        <h3>ROGER SCOTT</h3>
+                        <p>MARKETING MANAGER</p>
+                    </div>
+
+                    <div class="quote">&ldquo;</div>
+                </div>
+
+                <p class="testimonial-text">
+                    Far far away, behind the word mountains,
+                    far from the countries Vokalia and
+                    Consonantia, there live the blind texts.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+    <section class="blog-section">
+
+        <div class="section-heading">
+            <p>Our Blog</p>
+            <h1>Recent Blog</h1>
+        </div>
+
+        <div class="blog-container">
+
+            <!-- Blog Card 1 -->
+            <article class="blog-card">
+
+                <div class="blog-image">
+                    <img
+                        src="image/image_1.jpg"
+                        alt="Construction planning and architecture"
+                    >
+
+                    <div class="date-box">
+                        <span class="day">16</span>
+                        <span class="month">JAN</span>
+                    </div>
+                </div>
+
+                <div class="blog-content">
+
+                    <div class="blog-meta">
+                        <div><span><i class="fa-solid fa-user"></i></span>ADMIN</div>
+                        <div><span><i class="fa-solid fa-comment"></i></span>3 COMMENTS</div>
+                    </div>
+
+                    <h2>Biggest Construction in New York, USA</h2>
+
+                    <p>
+                        A small river named Duden flows by their place
+                        and supplies it with the necessary regelialia.
+                    </p>
+
+                </div>
+            </article>
+
+            <!-- Blog Card 2 -->
+            <article class="blog-card">
+
+                <div class="blog-image">
+                    <img
+                        src="image/image_2.jpg"
+                        alt="Construction workers at a building site"
+                    >
+
+                    <div class="date-box">
+                        <span class="day">16</span>
+                        <span class="month">JAN</span>
+                    </div>
+                </div>
+
+                <div class="blog-content">
+
+                    <div class="blog-meta">
+                        <div><span><i class="fa-solid fa-user"></i></span>ADMIN</div>
+                        <div><span><i class="fa-solid fa-comment"></i></span>3 COMMENTS</div>
+                    </div>
+
+                    <h2>Biggest Construction in New York, USA</h2>
+
+                    <p>
+                        A small river named Duden flows by their place
+                        and supplies it with the necessary regelialia.
+                    </p>
+
+                </div>
+            </article>
+            <!-- Blog Card 3 -->
+            <article class="blog-card">
+
+                <div class="blog-image">
+                    <img
+                        src="image/image_3.jpg"
+                        alt="House model and property planning"
+                    >
+
+                    <div class="date-box">
+                        <span class="day">16</span>
+                        <span class="month">JAN</span>
+                    </div>
+                </div>
+
+                <div class="blog-content">
+
+                    <div class="blog-meta">
+                        <div><span><i class="fa-solid fa-user"></i></span>ADMIN</div>
+                        <div><span><i class="fa-solid fa-comment"></i></span>3 COMMENTS</div>
+                    </div>
+
+                    <h2>Biggest Construction in New York, USA</h2>
+
+                    <p>
+                        A small river named Duden flows by their place
+                        and supplies it with the necessary regelialia.
+                    </p>
+
+                </div>
+            </article>
+
+        </div>
+
+    </section>
+    <main class="contact-section">
+
+    <!-- LEFT SECTION -->
+    <section class="contact-form">
+
+      <p class="small-heading">DROP A MESSAGE</p>
+      <h2>Request A Quote</h2>
+
+      <form action="#" method="post">
+
+        <div class="form-row">
+
+          <div class="form-group">
+            <label for="fullname">Your Full Name</label>
+            <input
+              type="text"
+              id="fullname"
+              name="fullname"
+              placeholder="Your Full Name"
+              required
+            >
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Email"
+              required
+            >
+          </div>
+
+        </div>
+
+        <div class="form-group">
+          <label for="subject">Select Subject</label>
+
+          <select id="subject" name="subject" required>
+            <option value="">Choose a service</option>
+            <option value="construction">Construction Services</option>
+            <option value="renovation">Home Renovation</option>
+            <option value="interior">Interior Design</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="message">Message</label>
+
+          <textarea
+            id="message"
+            name="message"
+            placeholder="Message"
+            required
+          ></textarea>
+        </div>
+
+        <button type="submit" class="submit-btn">
+          SEND MESSAGE
+        </button>
+
+      </form>
+
+    </section>
+
+    <!-- RIGHT SECTION -->
+    <section class="faq-section">
+
+      <p class="small-heading">
+        Frequently Asked Questions
+      </p>
+
+      <h1>You Want To Ask Something From Us?</h1>
+
+      <p class="faq-intro">
+      A small river named Duden flows by their place and supplies it with the necessary regelialia. 
+      It is a paradisematic country,
+       in which roasted parts of sentences fly into your mouth.
+      </p>
+
+      <div class="faq-list">
+
+        <details class="faq-item">
+          <summary>What are the problems in construction?</summary>
+          <div class="faq-answer">
+            Common construction problems include budget overruns,
+            delays, material shortages and poor project planning.
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>What is best practice in construction?</summary>
+          <div class="faq-answer">
+            Good planning, quality materials, proper safety measures
+            and regular communication help deliver better results.
+          </div>
+        </details>
+
+        <details class="faq-item" open>
+          <summary>How long does a typical project take?</summary>
+          <div class="faq-answer">
+               A small renovation may take two to four weeks.
+            A home addition can take one to two months, while
+            a complete house may take several months.
+          </div>
+        </details>
+
+      </div>
+
+    </section>
+
+  </main>
+  <footer class="footer">
+
+    <!-- Newsletter Section -->
+    <section class="newsletter">
+      <div class="newsletter-text">
+        <h2>Subscribe to Our Newsletter</h2>
+        <p>
+          Get the latest updates on projects, industry
+          news, and exclusive offers.
+        </p>
+      </div>
+
+      <form class="newsletter-form">
+        <input
+          type="email"
+          placeholder="Enter your email address"
+          required
+        >
+        <button type="submit">Subscribe</button>
+      </form>
+    </section>
+
+    <!-- Main Footer Section -->
+    <section class="footer-main">
+
+      <!-- Column 1 -->
+      <div class="footer-column about">
+        <h3>BUILDREAM</h3>
+        <p>
+          A small river named Duden flows by their place
+          and supplies it with the necessary regelialia.
+        </p>
+
+        <div class="social-items">
+         <a href="#" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+         <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+         <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        </div>
+      </div>
+
+      <!-- Column 2 -->
+      <div class="footer-column recent-posts">
+        <h3>Recent Posts</h3>
+
+        <div class="post">
+          <img
+            src="image/image_1.jpg"
+            alt="Construction project"
+          >
+          <div class="const">
+            <a href="#">Biggest Construction in New York, USA</a>
+            <small>♟ Admin &nbsp; ● 19</small>
+          </div>
+        </div>
+
+        <div class="post">
+          <img
+            src="image/image_2.jpg"
+            alt="Construction workers"
+          >
+          <div class="const">
+            <a href="#">Biggest Construction in New York, USA</a>
+            <small>♟ Admin &nbsp; ● 19</small>
+          </div>
+        </div>
+
+        <div class="post">
+          <img
+            src="image/image_3.jpg"
+            alt="Building design"
+          >
+          <div class="const">
+            <a href="#">Biggest Construction in New York, USA</a>
+            <small>♟ Admin &nbsp; ● 19</small>
+          </div>
+        </div>
+      </div>
+
+      <!-- Column 3 -->
+      <div class="footer-column quick-links">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="#">› &nbsp; Home</a></li>
+          <li><a href="#">› &nbsp; About</a></li>
+          <li><a href="#">› &nbsp; Services</a></li>
+          <li><a href="#">› &nbsp; Project</a></li>
+          <li><a href="#">› &nbsp; Pricing</a></li>
+          <li><a href="#">› &nbsp; Contact Us</a></li>
+        </ul>
+      </div>
+
+      <!-- Column 4 -->
+      <div class="footer-column contact">
+        <h3>Have a Question?</h3>
+        <p>📍 203 Fake St. Mountain View, San Francisco, California, USA</p>
+        <p>📞 +1 415 555 0142</p>
+        <p>✉ info@example.com</p>
+      </div>
+
+    </section>
+  </footer>
+  <footer class="last-section">
+        <p>
+            Copyright ©2026 All rights reserved |
+            This template is made with
+            <span class="heart">♥</span>
+            by
+            <a href="#">MOIN</a>
+        </p>
+    </footer>
+</body>
+</html>
