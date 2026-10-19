@@ -1366,9 +1366,13 @@ a
             font-weight: 400;
             margin-top: 20px;
         }
+        .testimonial-container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
 
         /* 4. Cards container */
-        .testimonial-container {
+        .testimonial-row {
             display: flex;
             gap: 26px;
             align-items: stretch;
@@ -1435,7 +1439,22 @@ a
             font-size: 24px;
             font-weight: bold;
             right: -1px;
-            top: -1px;
+            bottom: -1px;
+        }
+                .quote-icon {
+            position:absolute;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: white;
+            color: #f39819;
+            border-radius: 50%;
+            font-size: 24px;
+            font-weight: bold;
+            right: -1px;
+            bottom: -1px;
         }
 
         .testimonial-card.active .quote {
@@ -2696,13 +2715,13 @@ a
         </div>
     </section>
     <section class="testimonial-section">
-
+    <div class="testimonial-container">
         <div class="section-heading">
             <span>Testimonial</span>
             <h1>Happy Clients</h1>
         </div>
 
-        <div class="testimonial-container">
+        <div class="testimonial-row">
 
             <!-- First card -->
             <div class="testimonial-card">
@@ -2720,6 +2739,7 @@ a
                         <h3>ROGER SCOTT</h3>
                         <p>MARKETING MANAGER</p>
                     </div>
+                </div>
                 <p class="testimonial-text">
                     Far far away, behind the word mountains,
                     far from the countries Vokalia and
@@ -2727,7 +2747,7 @@ a
                 </p>
 
             </div>
-
+             <div class="testimonial-row">
             <!-- Second card -->
             <div class="testimonial-card">
 
@@ -2744,6 +2764,7 @@ a
                         <h3>ROGER SCOTT</h3>
                         <p>MARKETING MANAGER</p>
                     </div>
+                </div>
                 <p class="testimonial-text">
                     Far far away, behind the word mountains,
                     far from the countries Vokalia and
@@ -2751,7 +2772,7 @@ a
                 </p>
 
             </div>
-
+             <div class="testimonial-row">
             <!-- Third orange card -->
             <div class="testimonial-card active">
 
@@ -2762,12 +2783,13 @@ a
                         alt="Client portrait"
                         class="client-image"
                     >
-                     <div class="quote">&ldquo;</div>
+                     <div class="quote-icon">&ldquo;</div>
                 </div>
                     <div class="client-details">
                         <h3>ROGER SCOTT</h3>
                         <p>MARKETING MANAGER</p>
                     </div>
+                </div>
                 <p class="testimonial-text">
                     Far far away, behind the word mountains,
                     far from the countries Vokalia and
@@ -2777,7 +2799,7 @@ a
             </div>
 
         </div>
-
+         </div>
     </section>
     <section class="blog-section">
 
