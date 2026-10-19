@@ -588,7 +588,7 @@
                     rgba(255,166,41,0) 43%
                 ),
                 url('image/bg_4.jpg')
-                center/cover no-repeat;
+                center/cover no-repeat fixed;
         }
 
         .banner-content {
@@ -1335,10 +1335,12 @@ a
     font-weight: bold;
     letter-spacing: 0.5px;
     text-align: left;
-    line-height: 22px;
-    padding: 7px 16px;
-    border-radius: 25px;
-    width: 50%;
+    line-height: 20px;
+    padding: 7px 17px;
+    border-radius: 30px;
+    width: 44%;
+    z-index:2;
+    white-space:nowrap;
 }
 
         /* 2. Main section */
@@ -1401,6 +1403,12 @@ a
             object-fit: cover;
             flex-shrink: 0;
         }
+        .client-image-box {
+    position: relative;
+    flex-shrink: 0;
+    width: 80px;
+    height: 80px;
+}
 
         .client-details h3 {
             font-size: 20px;
@@ -1415,6 +1423,7 @@ a
 
         /* 8. Quote icon */
         .quote {
+            position:absolute;
             width: 30px;
             height: 30px;
             display: flex;
@@ -1425,8 +1434,8 @@ a
             border-radius: 50%;
             font-size: 24px;
             font-weight: bold;
-            margin-left: -28px;
-            margin-top: 50px;
+            right: -1px;
+            top: -1px;
         }
 
         .testimonial-card.active .quote {
@@ -2699,20 +2708,18 @@ a
             <div class="testimonial-card">
 
                 <div class="client-info">
+                    <div class="client-image-box">
                     <img
                         src="image/person_3.jpg"
                         alt="Roger Scott"
                         class="client-image"
                     >
-
+                     <div class="quote">&ldquo;</div>   
+                    </div>
                     <div class="client-details">
                         <h3>ROGER SCOTT</h3>
                         <p>MARKETING MANAGER</p>
                     </div>
-
-                    <div class="quote">&ldquo;</div>
-                </div>
-
                 <p class="testimonial-text">
                     Far far away, behind the word mountains,
                     far from the countries Vokalia and
@@ -2725,20 +2732,18 @@ a
             <div class="testimonial-card">
 
                 <div class="client-info">
+                   <div class="client-image-box"> 
                     <img
                         src="image/person_2.jpg"
                         alt="Client portrait"
                         class="client-image"
                     >
-
+                        <div class="quote">&ldquo;</div>
+                </div>
                     <div class="client-details">
                         <h3>ROGER SCOTT</h3>
                         <p>MARKETING MANAGER</p>
                     </div>
-
-                    <div class="quote">&ldquo;</div>
-                </div>
-
                 <p class="testimonial-text">
                     Far far away, behind the word mountains,
                     far from the countries Vokalia and
@@ -2751,20 +2756,18 @@ a
             <div class="testimonial-card active">
 
                 <div class="client-info">
+                <div class="client-image-box">
                     <img
                         src="image/person_1.jpg"
                         alt="Client portrait"
                         class="client-image"
                     >
-
+                     <div class="quote">&ldquo;</div>
+                </div>
                     <div class="client-details">
                         <h3>ROGER SCOTT</h3>
                         <p>MARKETING MANAGER</p>
                     </div>
-
-                    <div class="quote">&ldquo;</div>
-                </div>
-
                 <p class="testimonial-text">
                     Far far away, behind the word mountains,
                     far from the countries Vokalia and
